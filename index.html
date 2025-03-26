@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +9,46 @@
     />
     <title>Digital Portfolio | Dmitriy Terekhov</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /*.card:nth-child(1) {
+        --image-url: url('img/about.jpg');
+      }
+      .card:nth-child(2) {
+        --image-url: url('img/skills.jpg');
+      }
+      .card:nth-child(3) {
+        --image-url: url('img/project.jpg');
+      }
+      .card:nth-child(4) {
+        --image-url: url('img/gallery.jpg');
+      }
+      .card:nth-child(5) {
+        --image-url: url('img/projects.jpg');
+      }
+      .card:nth-child(6) {
+        --image-url: url('img/contacts.jpg');
+      }*/
+    </style>
   </head>
   <body>
+    <section class="hero-section">
+      <div class="hero-background"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Digital Portfolio</h1>
+        <h2 class="hero-subtitle">Terekhov Dmitriy</h2>
+        <p class="hero-description">
+          Web Developer & Python Developer | Creating innovative solutions with modern technologies
+        </p>
+        <a href="#portfolio" class="hero-cta">View My Work</a>
+      </div>
+    </section>
+
     <header class="title_container">
       <h1 class="title">Digital Portfolio</h1>
       <h2 class="subtitle">Terekhov Dmitriy</h2>
     </header>
 
-    <main class="card_container">
+    <main class="card_container" id="portfolio">
       <section class="card">
         <h3>About Me</h3>
         <p>
@@ -136,5 +168,43 @@
         </ul>
       </section>
     </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About Me</h4>
+          <p>
+            A passionate web and Python developer focused on creating innovative solutions 
+            and user-friendly applications. Specializing in Telegram Mini Apps and bot development.
+          </p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect With Me</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:terekh.d08@gmail.com">📧 Email</a></li>
+            <li><a href="https://t.me/+RGBBXixeyX00OGZi">📱 Telegram</a></li>
+            <li><a href="https://github.com/trh-dt">💻 GitHub</a></li>
+          </ul>
+          <div class="social-links">
+            <a href="https://t.me/+RGBBXixeyX00OGZi" title="Telegram">📱</a>
+            <a href="https://github.com/trh-dt" title="GitHub">💻</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dmitriy Terekhov. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
