@@ -166,7 +166,7 @@ body {
 
 .card {
   width: 100%;
-  height: 400px;
+  height: 750px;
   background-color: #000000;
   border-radius: 10px;
   border: 1px solid #ffffff;
@@ -188,6 +188,51 @@ body {
   min-height: 400px;
 }
 
+.gallery-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery-window {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-image.active {
+  opacity: 1;
+}
+
+.gallery-window:hover .gallery-image:nth-child(1) {
+  opacity: 1;
+}
+
+.gallery-window:hover .gallery-image:nth-child(2) {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.gallery-window:hover .gallery-image:nth-child(3) {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -203,11 +248,13 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.gallery-image {
+.gallery-item .gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  position: relative;
+  opacity: 1;
 }
 
 .gallery-item:hover .gallery-image {
@@ -221,9 +268,7 @@ body {
   right: 0;
   background: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 8px;
-  text-align: center;
-  font-size: 0.9em;
+  padding: 10px;
   transform: translateY(100%);
   transition: transform 0.3s ease;
 }
@@ -323,25 +368,52 @@ body {
   color: #cccccc;
 }
 
+.contacts-card {
+  grid-column: 1 / -1;
+  height: auto !important;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .contacts-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
   list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .contacts-list li {
-  margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.contacts-list li:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .contacts-list a {
-  color: #cccccc;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .contacts-list a:hover {
-  color: #ffffff;
+  color: #00ff00;
 }
 
 @media (max-width: 1200px) {
@@ -529,12 +601,14 @@ body {
     padding: 6px;
   }
 
-  .contacts-list li {
-    font-size: 0.9em;
+  .contacts-list {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .contacts-list a {
-    font-size: 0.9em;
+  
+  .contacts-list li {
+    width: 100%;
+    justify-content: center;
   }
 }
 
